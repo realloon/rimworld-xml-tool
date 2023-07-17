@@ -1,0 +1,14 @@
+{
+  "name": "rimworld-xml-tool",
+  "version": "0.2.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "author": "realloon",
+  "license": "MIT",
+  "dependencies": {
+    "xml2js": "^0.6.0"
+  },
+  "type": "module"
+}
