@@ -24,9 +24,9 @@ export default async function convertXmlToJson(xml) {
 
           // get the statBases of the parent tag definition.
           const { ParentName: parentName } = def.$
-          const parentStatBases = defs.filter(
+          const parentStatBases = defs.find(
             def => def.$.Name === parentName
-          ).statBases
+          )?.statBases
 
           return {
             defName,

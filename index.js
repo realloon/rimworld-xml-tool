@@ -10,7 +10,11 @@ const outputPath = './output/bundle.json'
   try {
     const paths = await getAllFilesInPath(rootPath)
 
-    const xmlStrArray = await Promise.all(paths.map(path => readFile(path)))
+    const xmlStrArray = await Promise.all(
+      paths
+        .filter(path => path.split('.').pop() === 'xml')
+        .map(path => readFile(path))
+    )
 
     const jsonArray = await Promise.all(
       xmlStrArray.map(xmlString => convertXmlToJson(xmlString))
